@@ -1,4 +1,11 @@
 # Deep Dual-resolution Networks for Real-time and Accurate Semantic Segmentation of Road Scenes
+## Instructions to run code
+
+salloc -p gpu --gres gpu:2
+enable_lmod
+module load container_env pytorch-gpu/1.3.1
+crun -p ~/envs/flooding python -m torch.distributed.launch --nproc_per_node=2 tools/train.py --cfg experiments/cityscapes/ddrnet23_slim.yaml 
+
 
 ## Introduction
 This is the unofficial code of [Deep Dual-resolution Networks for Real-time and Accurate Semantic Segmentation of Road Scenes](https://arxiv.org/pdf/2101.06085.pdf). which achieve state-of-the-art trade-off between accuracy and speed on cityscapes and camvid, without using inference acceleration and extra data!on single 2080Ti GPU, DDRNet-23-slim yields 77.4% mIoU at 109 FPS on Cityscapes test set and 74.4% mIoU at 230 FPS on CamVid test set.
