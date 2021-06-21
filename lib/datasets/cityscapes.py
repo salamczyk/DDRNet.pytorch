@@ -58,8 +58,8 @@ class Cityscapes(BaseDataset):
                               19: 6, 20: 7, 21: 8, 22: 9, 23: 10, 24: 11,
                               25: 12, 26: 13, 27: 14, 28: 15, 
                               29: ignore_label, 30: ignore_label, 
-                              31: 16, 32: 17, 33: 18, 34: 19,
-                              255:ignore_label}#34->19 new class for flooding
+                              31: 16, 32: 17, 33: 18, 34: 19, #34->19 new class for flooding
+                              255:ignore_label}
         '''
         labels = [
             #       name                     id    trainId   category            catId     hasInstances   ignoreInEval   color

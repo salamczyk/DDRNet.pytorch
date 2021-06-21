@@ -1,10 +1,10 @@
 # Deep Dual-resolution Networks for Real-time and Accurate Semantic Segmentation of Road Scenes
 ## Instructions to run code
 
--salloc -p gpu --gres gpu:2  
--enable_lmod  
--module load container_env pytorch-gpu/1.3.1  
--crun -p ~/envs/flooding python -m torch.distributed.launch --nproc_per_node=2 tools/train.py --cfg experiments/cityscapes/ddrnet23_slim.yaml  
+- salloc -p gpu --gres gpu:2  
+- enable_lmod  
+- module load container_env pytorch-gpu/1.3.1  
+- crun -p ~/envs/flooding python -m torch.distributed.launch --nproc_per_node=2 tools/train.py --cfg experiments/cityscapes/ddrnet23_slim.yaml  
 
 
 ## Introduction
