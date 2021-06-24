@@ -28,8 +28,8 @@ class Cityscapes(BaseDataset):
                  crop_size=(512, 1024), 
                  downsample_rate=1,
                  scale_factor=16,
-                 mean=[0.485, 0.456, 0.406], 
-                 std=[0.229, 0.224, 0.225]):
+                 mean=[0.2413, 0.2795, 0.2812], 
+                 std=[0.1976, 0.2043, 0.2108]):
 
         super(Cityscapes, self).__init__(ignore_label, base_size,
                 crop_size, downsample_rate, scale_factor, mean, std,)
@@ -102,11 +102,7 @@ class Cityscapes(BaseDataset):
         ]
         '''
         #TODO Modify class weights to accomodate new class
-        self.class_weights = torch.FloatTensor([0.8373, 0.918, 0.866, 1.0345, 
-                                        1.0166, 0.9969, 0.9754, 1.0489,
-                                        0.8786, 1.0023, 0.9539, 0.9843, 
-                                        1.1116, 0.9037, 1.0865, 1.0955, 
-                                        1.0865, 1.1529, 1.0507]).cuda()
+        self.class_weights = torch.FloatTensor([0.392557744, 2.211810277, 0.139110322, 25.7640011, 18.76741887, 9.382860457, 83.22879551, 7.245902156, 1.0645862, 15.44870902, 4.374902024, 13.95427439, 117.1483135, 1.776765225, 63.06756719, 66.79799397, 79.57442231, 178.9629507, 37.65393912, 0.133119449]).cuda()
     
     def read_files(self):
         files = []
