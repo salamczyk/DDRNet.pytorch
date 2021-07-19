@@ -202,7 +202,7 @@ class segmenthead(nn.Module):
 
 class DualResNet(nn.Module):
 
-    def __init__(self, block, layers, num_classes=19, planes=64, spp_planes=128, head_planes=128, augment=True):
+    def __init__(self, block, layers, num_classes=20, planes=64, spp_planes=128, head_planes=128, augment=True):
         super(DualResNet, self).__init__()
 
         highres_planes = planes * 2
@@ -342,7 +342,7 @@ class DualResNet(nn.Module):
             return x_      
 
 def DualResNet_imagenet(cfg, pretrained=False):
-    model = DualResNet(BasicBlock, [2, 2, 2, 2], num_classes=19, planes=32, spp_planes=128, head_planes=64, augment=True)
+    model = DualResNet(BasicBlock, [2, 2, 2, 2], num_classes=20, planes=32, spp_planes=128, head_planes=64, augment=True)
     if pretrained:
         pretrained_state = torch.load(cfg.MODEL.PRETRAINED, map_location='cpu') 
         model_dict = model.state_dict()

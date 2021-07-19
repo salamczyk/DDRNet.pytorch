@@ -18,7 +18,6 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-
 class FullModel(nn.Module):
   """
   Distribute the loss on multi-gpu to reduce 
@@ -124,6 +123,8 @@ def get_confusion_matrix(label, pred, size, num_class, ignore=-1):
     seg_pred = np.asarray(np.argmax(output, axis=3), dtype=np.uint8)
     seg_gt = np.asarray(
     label.cpu().numpy()[:, :size[-2], :size[-1]], dtype=np.int)
+
+
 
     ignore_index = seg_gt != ignore
     seg_gt = seg_gt[ignore_index]
